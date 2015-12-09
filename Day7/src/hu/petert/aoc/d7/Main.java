@@ -10,6 +10,17 @@ public class Main {
 
     public static void main(String[] args){
 
+        loadWires();
+        int out = wires.get("a").getOutput();
+        loadWires();
+        wires.put("b", new Wire(String.valueOf(out)));
+        int out2 = wires.get("a").getOutput();
+        System.out.println("Output: " + out);
+        System.out.println("new output: " + out2);
+
+    }
+
+    public static void loadWires(){
         try {
             Scanner scanner = new Scanner(new File("input.txt"));
 
@@ -24,9 +35,6 @@ public class Main {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
-        System.out.println("Output: " + (int) wires.get("a").getOutput());
-
     }
 
 }
