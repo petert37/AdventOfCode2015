@@ -7,10 +7,8 @@ import java.util.*;
 public class Main {
 
     static Map<String, City> cities = new HashMap<>();
-    static List<String> routes = new ArrayList<>();
 
     public static void main(String[] args){
-
 
         try {
             Scanner scanner = new Scanner(new File("input.txt"));
@@ -37,11 +35,6 @@ public class Main {
             int max = c.getLongestRoute(parents, 0);
             if(max > longest) longest = max;
         }
-
-//        for(City c : cities.values()){
-//            List<City> parents = new ArrayList<>();
-//            c.listAllRoutes(parents);
-//        }
 
         System.out.println("Shortest route: " + shortest);
         System.out.println("Longest route: " + longest);
